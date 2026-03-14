@@ -1,4 +1,3 @@
-((window) => {
     const Library = {
         /** 
          * Undefined elements are ignored during sorting and moved to the end of the array
@@ -318,6 +317,5 @@
         arr[element2] = temp;
     }
 
-    window.Library = Library
-})(window);
+ 
 
