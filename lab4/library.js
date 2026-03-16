@@ -8,7 +8,7 @@
             console.log("bubbleSort:");
             let size = arr.length;
             let swapped;
-            let comparision = 0;
+            let comparison = 0;
             let swaps = 0;
 
             size = moveEmpty(arr)
@@ -16,7 +16,7 @@
             for (let i = 0; i < size - 1; i++) {
                 swapped = false;
                 for (let j = 0; j < size - i - 1; j++) {
-                    comparision++;
+                    comparison++;
                     if (sortType) {
                         if (arr[j] > arr[j + 1]) {
                             swap(arr, j, j + 1)
@@ -46,7 +46,7 @@
 
             console.log("sorted array:" + arr);
             console.log("swaps:" + swaps);
-            console.log("comparision:" + comparision);
+            console.log("comparison:" + comparison);
 
             return arr;
         },
@@ -59,40 +59,44 @@
         selectionSort(arr, sortType) {
             console.log("selectionSort:");
             let size = arr.length;
-            let comparision = 0;
+            let comparison = 0;
             let swaps = 0;
             let swapIndex = 0;
             size = moveEmpty(arr)
-            let min = 100_000_000;
-            let max = 0;
+            let min = Infinity;
+            let max = -Infinity;
 
 
             if (sortType) {
                 for (let i = 0; i < size; i++) {
                     for (let j = i; j < size; j++) {
-                        comparision++;
+                        comparison++;
                         if (min > arr[j]) {
                             min = arr[j];
                             swapIndex = j;
                         }
                     }
-                    swap(arr, i, swapIndex)
-                    swaps++;
-                    min = 100_000_000;
+                    if (i !== swapIndex) {
+                        swap(arr, i, swapIndex);
+                        swaps++;
+                    }
+                    min = Infinity;
                     swapIndex = 0;
                 }
             } else {
                 for (let i = 0; i < size; i++) {
                     for (let j = i; j < size; j++) {
-                        comparision++;
+                        comparison++;
                         if (max < arr[j]) {
                             max = arr[j];
                             swapIndex = j;
                         }
                     }
-                    swap(arr, i, swapIndex)
-                    swaps++;
-                    max = 0;
+                    if (i !== swapIndex) {
+                        swap(arr, i, swapIndex);
+                        swaps++;
+                    }
+                    max = -Infinity;
                     swapIndex = 0;
                 }
             }
@@ -106,7 +110,7 @@
 
             console.log("sorted array:" + arr);
             console.log("swaps:" + swaps);
-            console.log("comparision:" + comparision);
+            console.log("comparison:" + comparison);
 
             return arr;
         },
@@ -119,17 +123,15 @@
         insertionSort(arr, sortType) {
             console.log("insertionSort:");
             let size = arr.length;
-            let comparision = 0;
+            let comparison = 0;
             let swaps = 0;
             size = moveEmpty(arr)
-            //[9,8,1]
-            let z;
 
             if (sortType) {
                 for (let i = 1; i < size; i++) {
                     for (let j = i - 1; j > -1; j--) {
                         let temp = arr[i];
-                        comparision++;
+                        comparison++;
                         if (temp < arr[j]) {
                             arr[i] = arr[j];
                             i--;
@@ -142,7 +144,7 @@
                 for (let i = 1; i < size; i++) {
                     for (let j = i - 1; j > -1; j--) {
                         let temp = arr[i];
-                        comparision++;
+                        comparison++;
                         if (temp > arr[j]) {
                             arr[i] = arr[j];
                             i--;
@@ -161,7 +163,7 @@
 
             console.log("sorted array:" + arr);
             console.log("swaps:" + swaps);
-            console.log("comparision:" + comparision);
+            console.log("comparison:" + comparison);
 
             return arr;
         },
@@ -173,17 +175,18 @@
         */
         shellSort(arr, sortType) {
             console.log("shellSort:");
-            let size = arr.length;
+            let size = moveEmpty(arr);
             let gap = Math.floor(size / 2);
-            let comparision = 0;
+            let comparison = 0;
             let swaps = 0;
             let temp;
+
             if (sortType) {
                 while (gap > 0) {
                     for (let i = gap; i < size; i++) {
                         temp = arr[i];
                         let j = i;
-                        comparision++;
+                        comparison++;
                         while (j >= gap && arr[j - gap] > temp) {
                             arr[j] = arr[j - gap];
                             j -= gap;
@@ -199,7 +202,7 @@
                     for (let i = gap; i < size; i++) {
                         temp = arr[i];
                         let j = i;
-                        comparision++;
+                        comparison++;
                         while (j >= gap && arr[j - gap] < temp) {
                             arr[j] = arr[j - gap];
                             j -= gap;
@@ -220,7 +223,7 @@
 
             console.log("sorted array:" + arr);
             console.log("swaps:" + swaps);
-            console.log("comparision:" + comparision);
+            console.log("comparison:" + comparison);
 
             return arr;
         },
@@ -233,7 +236,7 @@
         quickSort(arr, sortType) {
             console.log("quickSort:");
             let stats = {
-                comparisons: 0,
+                comparison: 0,
                 moves: 0
             };
 
@@ -248,7 +251,7 @@
             moveEmpty(result);
 
             console.log("sorted array:", result);
-            console.log("comparisons:", stats.comparisons);
+            console.log("comparison:", stats.comparison);
             console.log("moves:", stats.moves);
 
             return result;
@@ -259,12 +262,20 @@
                 }
 
                 let start = arr[Math.floor(arr.length / 2)];
+                if(start === undefined) {
+                    let i = 1;
+                    let mid = Math.floor(arr.length / 2);
+                    while(mid + i < arr.length && start === undefined){
+                        start = arr[Math.floor(arr.length / 2)+i];
+                        i++;
+                    }
+                }
                 let left = [];
                 let right = [];
                 let equals = [];
 
                 for (let i of arr) {
-                    stats.comparisons++;
+                    stats.comparison++;
 
                     if (i === start) {
                         equals.push(i);
