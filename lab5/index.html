@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Lab5</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<section id="startMenu">
+		<h1>
+			Pixel Hunt
+		</h1>
+		<label for="level">Choose difficulty:</label>
+		<select id="level" name="level">
+			<option value="chooseOption">choose an option</option>
+			<option value="easy">easy</option>
+			<option value="normal">normal</option>
+			<option value="hard">hard</option>
+		</select>
+		<label for="color">Choose color:</label>
+		<select id="skin" name="skin">
+			<option value="chooseColor">choose an option</option>
+			<option value="Dan">Dan Balan</option>
+			<option value="Vitalya">Vitalya</option>
+			<option value="13:56">13:56</option>
+		</select>
+		<button id="button">start</button>
+	</section>
+	<section id="game" style="display: none;">
+		<p>score: <span id="score">0</span></p>
+		<p>time left for click: <span id="time">1</span></p>
+		<div id="box"></div>
+	</section>
+	<script src="main.js"></script>
+</body>
+
+</html>
