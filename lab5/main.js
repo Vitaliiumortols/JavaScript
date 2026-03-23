@@ -100,7 +100,7 @@
             box.style.top = randomY + "px";
         }
 
-        async function timer() {
+        function timer() {
             clearInterval(timerId);
 
             timeForClick = timerTime;
