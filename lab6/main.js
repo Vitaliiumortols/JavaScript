@@ -71,7 +71,7 @@ function clickReg() {
 async function parseDataset() {
     const fileName = "data.json";
     const response = await fetch(fileName);
-    dataSet = await response.json();
+    dataSet = response.json();
 }
 
 function checkWin() {
