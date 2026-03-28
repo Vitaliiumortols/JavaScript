@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #f5efe6 0%, #ece4d8 45%, #e6ddd0 100%);
+    color: #2f2a26;
+}
+
+.container {
+    width: min(100%, 760px);
+    padding: 30px 28px;
+    border-radius: 30px;
+    background: rgba(255, 250, 245, 0.88);
+    border: 1px solid rgba(120, 102, 84, 0.12);
+    box-shadow:
+        0 20px 50px rgba(78, 63, 49, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#board {
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 14px;
+    border-radius: 24px;
+    background: #ded3c4;
+    box-shadow: inset 0 2px 8px rgba(70, 55, 42, 0.08);
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: none;
+    border-radius: 18px;
+    background: #f3e7d7;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 3px 8px rgba(84, 65, 50, 0.08);
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cell:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 8px 14px rgba(84, 65, 50, 0.12);
+}
+
+.cell:active {
+    transform: scale(0.97);
+}
+
+.cell.active {
+    background: #6b4f3a;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 4px 10px rgba(53, 38, 28, 0.16);
+}
+
+.controls {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.controls button {
+    min-width: 160px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 16px;
+    background: #8a6a4e;
+    color: #fffaf5;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(82, 58, 39, 0.18);
+    transition: transform 0.12s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls button:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(82, 58, 39, 0.22);
+}
+
+.controls button:active {
+    transform: scale(0.98);
+}
+
+.info-panel {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 14px;
+}
+
+.info-panel p {
+    margin: 0;
+    padding: 16px 14px;
+    border-radius: 18px;
+    background: #f3ebe2;
+    border: 1px solid rgba(120, 102, 84, 0.1);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #7b6958;
+    letter-spacing: 0.3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.info-panel span {
+    display: block;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2f2a26;
+}
+
+#timer {
+    display: inline-block;
+    min-width: 120px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: #211c18;
+    color: #ff7b5a;
+    font-family: "Courier New", monospace;
+    letter-spacing: 3px;
+    box-shadow:
+        inset 0 0 0 2px #3a3028,
+        0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+#info {
+    color: #6b4f3a;
+}
+
+#moves {
+    color: #4b3b2f;
+}
+
+@media (max-width: 760px) {
+    .container {
+        padding: 22px 18px;
+        border-radius: 24px;
+    }
+
+    #board {
+        gap: 8px;
+        padding: 10px;
+        border-radius: 18px;
+    }
+
+    .cell {
+        border-radius: 14px;
+    }
+
+    .controls button {
+        min-width: 130px;
+        font-size: 17px;
+        padding: 12px 18px;
+    }
+
+    .info-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel span {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 14px;
+        gap: 18px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+
+    .info-panel p {
+        padding: 14px 12px;
+    }
+
+    .info-panel span {
+        font-size: 22px;
+    }
+
+    #timer {
+        min-width: 100px;
+        letter-spacing: 2px;
+    }
+}
