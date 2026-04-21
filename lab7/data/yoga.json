@@ -1,0 +1,37 @@
+{
+  "categoryName": "Yoga",
+  "items": [
+    {
+      "id": 1,
+      "name": "Hatha Yoga",
+      "shortname": "hatha",
+      "description": "Gentle yoga practice focused on posture and breathing.",
+      "price": "$18",
+      "image": "https://placehold.co/200x200?text=Hatha"
+    },
+    {
+      "id": 2,
+      "name": "Power Yoga",
+      "shortname": "power",
+      "description": "Dynamic yoga session for strength and flexibility.",
+      "price": "$20",
+      "image": "https://placehold.co/200x200?text=Power"
+    },
+    {
+      "id": 3,
+      "name": "Stretching",
+      "shortname": "stretching",
+      "description": "Improve flexibility and reduce muscle tension.",
+      "price": "$15",
+      "image": "https://placehold.co/200x200?text=Stretching"
+    },
+    {
+      "id": 4,
+      "name": "Meditation",
+      "shortname": "meditation",
+      "description": "Relaxation and mindfulness sessions for mental balance.",
+      "price": "$12",
+      "image": "https://placehold.co/200x200?text=Meditation"
+    }
+  ]
+}

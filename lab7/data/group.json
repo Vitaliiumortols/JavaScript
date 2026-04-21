@@ -1,0 +1,37 @@
+{
+  "categoryName": "Group Classes",
+  "items": [
+    {
+      "id": 1,
+      "name": "Zumba",
+      "shortname": "zumba",
+      "description": "Dance-based cardio workout with energetic music.",
+      "price": "$16",
+      "image": "https://placehold.co/200x200?text=Zumba"
+    },
+    {
+      "id": 2,
+      "name": "Aerobics",
+      "shortname": "aerobics",
+      "description": "Classic aerobic workout to improve fitness.",
+      "price": "$15",
+      "image": "https://placehold.co/200x200?text=Aerobics"
+    },
+    {
+      "id": 3,
+      "name": "HIIT",
+      "shortname": "hiit",
+      "description": "High-intensity interval training for fat burning.",
+      "price": "$18",
+      "image": "https://placehold.co/200x200?text=HIIT"
+    },
+    {
+      "id": 4,
+      "name": "Dance Fitness",
+      "shortname": "dance",
+      "description": "Fun dance workout suitable for beginners.",
+      "price": "$17",
+      "image": "https://placehold.co/200x200?text=Dance"
+    }
+  ]
+}

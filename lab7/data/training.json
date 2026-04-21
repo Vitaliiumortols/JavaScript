@@ -1,0 +1,37 @@
+{
+  "categoryName": "Personal Training",
+  "items": [
+    {
+      "id": 1,
+      "name": "Weight Loss Program",
+      "shortname": "weightloss",
+      "description": "Personal training plan focused on fat reduction.",
+      "price": "$35",
+      "image": "https://placehold.co/200x200?text=Weight+Loss"
+    },
+    {
+      "id": 2,
+      "name": "Muscle Gain Program",
+      "shortname": "musclegain",
+      "description": "Customized strength program for muscle growth.",
+      "price": "$40",
+      "image": "https://placehold.co/200x200?text=Muscle+Gain"
+    },
+    {
+      "id": 3,
+      "name": "Fitness Assessment",
+      "shortname": "assessment",
+      "description": "Professional evaluation of your physical condition.",
+      "price": "$25",
+      "image": "https://placehold.co/200x200?text=Assessment"
+    },
+    {
+      "id": 4,
+      "name": "Nutrition Plan",
+      "shortname": "nutrition",
+      "description": "Personalized diet plan to support your fitness goals.",
+      "price": "$28",
+      "image": "https://placehold.co/200x200?text=Nutrition"
+    }
+  ]
+}

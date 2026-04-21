@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Gym",
+    "shortname": "gym",
+    "notes": "Modern gym equipment and strength training programs."
+  },
+  {
+    "id": 2,
+    "name": "Yoga",
+    "shortname": "yoga",
+    "notes": "Relaxing and strengthening yoga sessions for all levels."
+  },
+  {
+    "id": 3,
+    "name": "Group Classes",
+    "shortname": "group",
+    "notes": "Fun and energetic group fitness classes."
+  },
+  {
+    "id": 4,
+    "name": "Personal Training",
+    "shortname": "training",
+    "notes": "Individual coaching programs with professional trainers."
+  }
+]

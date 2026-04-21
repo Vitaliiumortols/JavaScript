@@ -1,0 +1,37 @@
+{
+  "categoryName": "Gym",
+  "items": [
+    {
+      "id": 1,
+      "name": "Strength Training",
+      "shortname": "strength",
+      "description": "Full-body strength workouts using modern gym equipment.",
+      "price": "$25",
+      "image": "https://placehold.co/200x200?text=Strength"
+    },
+    {
+      "id": 2,
+      "name": "Cardio Training",
+      "shortname": "cardio",
+      "description": "Improve endurance with treadmill and cycling sessions.",
+      "price": "$20",
+      "image": "https://placehold.co/200x200?text=Cardio"
+    },
+    {
+      "id": 3,
+      "name": "Functional Training",
+      "shortname": "functional",
+      "description": "Exercises focused on strength, balance and flexibility.",
+      "price": "$22",
+      "image": "https://placehold.co/200x200?text=Functional"
+    },
+    {
+      "id": 4,
+      "name": "Bodybuilding",
+      "shortname": "bodybuilding",
+      "description": "Muscle-building workouts with professional equipment.",
+      "price": "$30",
+      "image": "https://placehold.co/200x200?text=Bodybuilding"
+    }
+  ]
+}
